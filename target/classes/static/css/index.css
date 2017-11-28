@@ -1,0 +1,72 @@
+body {
+	margin: 0%;
+	overflow: hidden;
+}
+
+.center {
+	text-align: center
+}
+
+#div_login_form {
+	position: absolute;
+	right: 10%;
+	top: 20%;
+	height: 30%;
+	width: 18%;
+	background-color: #dfe6ee;
+}
+
+.div_input {
+	position: relative;
+	left: 10%;
+	top: 12%;
+	width : 80%;
+	height: 12%;
+	margin-bottom: 3%;
+}
+
+.div_login {
+	position: relative;
+	left: 10%;
+	top: 12%;
+	width : 70%;
+	height: 20%;
+	margin-bottom: 2%;
+}
+
+#div_backgroup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0%;
+	overflow: hidden;
+}
+
+#div_top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 10%;
+	color: #fff;
+	z-index: 1;
+	background-color: transparent;
+	z-index: 1;
+}
+
+
+.main {
+	position: absolute;
+	width: 100%;
+	top: 120px;
+	bottom: 120px;
+	background-color: azure;
+	height: auto;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0; //
+	别漏了 width: 100%;
+	height: 120px;
+	background-color: greenyellow;
+}

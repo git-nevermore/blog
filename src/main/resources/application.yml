@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/blog?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&&useSSL=true
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+  thymeleaf:
+    mode: LEGACYHTML5
+    suffix: .html  
+    content-type: text/html 
+
+  http:
+    encoding:
+      charset: UTF-8
+      
+  view: 
+    mvc: 
+      prefix: /views
+      suffix: .html
+      
+server:
+  context-path: /blog
+  port: 2017
+

@@ -1,0 +1,55 @@
+<!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->
+<configuration scan="true" scanPeriod="10 seconds">
+
+	<property name="log.path" value="D:\\Project\\Git-Project\\logs\\" />
+	
+	<!-- Simple file output -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>
+				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n 
+			</pattern>
+			<charset>UTF-8</charset> 
+		</encoder>
+		
+		<!-- 日志输出级别 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+
+		<!-- 日志滚动策略 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 日志归档格式 -->
+			<fileNamePattern>${log.path}/blog-%d{yyyy-MM-dd}.[%i].log</fileNamePattern>
+			<!-- 单个文件不超过100M, 超过后将建立新的存储文件  -->
+			<maxFileSize>10MB</maxFileSize>
+			<!-- 60天的日志存储周期 , 总的日志大小不超过2 GB -->
+			<maxHistory>60</maxHistory>
+			<totalSizeCap>200MB</totalSizeCap>
+		</rollingPolicy>
+		
+		<!-- Safely log to the same file from multiple JVMs. Degrades performance! -->
+		<prudent>false</prudent>
+	</appender>
+
+	<!-- Console output -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				[ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] %logger{96} [%line] - %msg%n
+			</pattern>
+			<charset>UTF-8</charset> 
+		</encoder>
+		
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+	</appender>
+    
+	<!-- 基础的日志输出级别 -->
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root> 
+
+</configuration>  
