@@ -11,8 +11,8 @@ body {
 	position: absolute;
 	right: 10%;
 	top: 20%;
-	height: 30%;
-	width: 18%;
+	height: 250px;
+	width: 320px;
 	background-color: #dfe6ee;
 }
 
@@ -22,7 +22,6 @@ body {
 	top: 12%;
 	width : 80%;
 	height: 12%;
-	margin-bottom: 3%;
 }
 
 .div_login {
@@ -65,8 +64,8 @@ body {
 
 .bottom {
 	position: absolute;
-	bottom: 0; //
-	别漏了 width: 100%;
+	bottom: 0; 
+	width: 100%;
 	height: 120px;
 	background-color: greenyellow;
 }

@@ -2,67 +2,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>注册页面</title>
 </head>
-<script type="text/javascript" src="js/common/common.js"></script>
-<script type="text/javascript" src="js/common/jquery.js"></script>
+<link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 <body>
-
-	<div id="div_registry_form" style="text-align: center">
-	  <h2>注册页面</h2>
-	  <br>
-	  <div id = "div_user"> 用户名 : <input type = "text" id = "username"/></div>
-      <br>
-	  <div id = "div_pwd"> 密 &nbsp;&nbsp;码 : <input type = "password" id = "password" /></div>
-	  <br>
-	  <div id = "div_nick"> 昵&nbsp; &nbsp;称 : <input type = "text" id = "nickname"/></div>
- 	  <br>
-	  <div id = "div_type"> 类&nbsp; &nbsp;型 : &nbsp;&nbsp; <input type="radio" id="type1" name="type" checked="checked" value="普通用户" />普通用户
-			 <input type="radio" id="type2" name="type" value="管理员" disabled="disabled"/>管理员
-	  </div>
-	  <br>
-	  <div id = "div_submit">
-	    <input type="submit" id="registry" value="点击注册" />
-		&emsp;&emsp;&emsp;&emsp;&emsp;<input type="button" id="return" value="返回上级" onclick= "back()" />
-	  </div>
-	</div>
-
-	<script type="text/javascript">
-	    $("#registry").click(function() {
-		    var username = $("#username").val();
-		    var password = $("#password").val();
-		    var nickname = $("#nickname").val();
-		    var type = $("input[name='type']:checked").val();
-
-		    if (username == "" || username == null) {
-		        alert("用户名不能为空");
-		        return false;
-		    } else if (password == "" || password == null) {
-		        alert("密码不能为空");
-		        return false;
-		    } 
-		    
-		    $.ajax({
-		        type: "post",
-		        url: "user/registry",
-		        data: {
-		            username: username,
-		            password: password,
-		            nickname: nickname,
-		            type: type
-		        },
-		        dataType: "json",
-		        error: function(result){
-		        	result = JSON.parse(result.responseText);
-		        	alert("注册失败 " + result.message);
-		        },
-		        success: function(result) {
-		        	console.log(result);
-	        		alert(result.message);
-           			window.location.href = "/blog";		        		
-		        }
-		   });
- 		})
-	</script>
+	<form class="form-horizontal" role="form">
+		<h3 class="col-sm-11 col-sm-offset-1" style="text-align:center;">注册页面</h3>
+		<br>
+		<div class="form-horizontal" id="div_registry_form" role="form"
+			style="text-align: center; margin: 4% 0">
+			<div class="form-group">
+				<label for="username" class="col-sm-3 col-sm-offset-2 control-label">用户名: </label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="username" placeholder="请输入用户名">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-3 col-sm-offset-2 control-label">密码: </label>
+				<div class="col-sm-3">
+					<input type="password" class="form-control" id="password" placeholder="请输入密码">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nickname" class="col-sm-3 col-sm-offset-2 control-label">昵称: </label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="nickname" placeholder="请输入昵称">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="type" class="col-sm-3 col-sm-offset-2 control-label">类型:</label>
+				<div class="radio">
+					<label class="col-sm-1"> 
+						<input type="radio" style="width: 15px; height: 15px;" id="type1" name="type" value="普通用户" checked />普通用户
+					</label>
+					<label class="col-sm-1"> 
+						<input type="radio" style="width: 15px; height: 15px;" id="type2" name="type" value="管理员" disabled />管理员
+					</label>
+				</div>
+			</div>
+			<div id="div_submit">
+				<input type="submit" class="btn btn-info" style="margin: 0 7%" id="registry" value="点击注册" /> 
+				<input type="button" class="btn btn-info" id="return" value="返回上级" onclick="back()" />
+			</div>
+		</div>
+	</form>
 </body>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/registry.js"></script>
 </html>
