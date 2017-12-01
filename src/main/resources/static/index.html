@@ -1,50 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>陈文杰的个人博客</title>
-<link href="image/icon.png" rel="icon" type="image/x-icon" />
-<link href="css/index.css" rel="stylesheet" />
-<link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
-<link href="css/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="Movable Type 5.2.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>陈文杰的个人网站 - Chen Wenjie's Personal Website</title>
+
+<script type="text/javascript" src="js/lib/jquery.js"></script>
+<link href="css/home.css" rel="stylesheet" />
 </head>
-<body>
-	<div id="div_backgroup">
-		<img alt="卓尔小黑" width="100%" height="auto" src="image/dota2/drow_ranger.jpg">
-	</div>
-	
-	<form class="form-horizontal" role="form">
-		<div class="form-group">
-			<div id="div_login_form">
-				<h2 class="center" style="margin:20px;">登陆博客</h2>
-				<div class="form-group">
-					<div class="div_input">
-						<input class="form-control" type="text" placeholder="用户名" id="username" />
+<body id="classic-website" class="mt-main-index one-column">
+	<div id="container">
+		<div id="container-inner">
+			<div id="header">
+				<div id="header-inner">
+					<div id="header-content" onclick="backgroundImage();return false;">
+						<h1>陈文杰的个人网站</h1>
+						<p>Chen Wenjie's Personal Website</p>
 					</div>
 				</div>
-				<div class="form-group">
-					<div class="div_input">
-						<input class="form-control" type="password" placeholder="密码" id="password" />
+			</div>
+			<hr style="margin:-3% 5% 5% 5%; opacity: 0.4;">
+			<div id="content" style="margin: 0px 40px 20px 40px;">
+				<div id="content-inner">
+					<div id="alpha">
+						<div id="alpha-inner">
+							<div id="page-alpha" style="margin-bottom: 2em;">
+								<p>
+									» <a href="/blog">个人博客（Blog）</a>
+								</p>
+								<p>
+									» <a href="/blog">数据监控（Data）</a>
+								</p>
+							</div>
+							<div id="page-beta"></div>
+						</div>
+					</div>
+
+					<div id="beta">
+						<div id="beta-inner"></div>
 					</div>
 				</div>
-				<div class="form-group">
+			</div>
+
+			<div id="signin" style="margin: 0px 40px 20px 40px;" hidden="true">
+				<form >
 					<div class="div_input">
-						<input type="button" class="btn btn-primary btn-block" value="登录" id="login" />
+						<label >用户名</label>
+						<input class="input_transparent" type="text" id="username"/>
+					</div>
+					<div class="div_input">
+						<label >密&nbsp; &nbsp;码</label>
+						<input class="input_transparent" type="password" id="password"/>
+					</div>
+				</form>
+			</div>
+
+			<hr style="margin-left:5%; margin-right:5%; opacity: 0.4;">
+			<div id="footer" style="margin-left: 60%;">
+				<div id="footer-inner">
+					<div id="footer-content">
+						<p>
+							<a href="#" onclick="signin()">Sign in</a> |
+							<a href="/blog/registry" style="text-decoration: none;color: #fff;">Create Account</a>
+							<span id="img_placer"></span>
+						</p>
 					</div>
 				</div>
-				<div class="form-group">
-					<div class="div_input">
-						<a href="registry"><i>没有账号?点击这里注册一个吧！</i></a>
+			</div>
+			
+			<div id="footer2" style="margin-left: 60%" hidden="true">
+				<div id="footer-inner">
+					<div id="footer-content">
+						<p>
+							<a href="#" onclick="loginFunc()">Sign in</a> |
+							<a href="#" onclick="home()" style="text-decoration: none;color: #fff;">Home Page</a>
+							<span id="img_placer"></span>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</form>
+	</div>
+	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript">
+		function signin() {
+			$('#content').hide();
+			$('#footer').hide();
+			$('#signin').show();
+			$('#footer2').show();
+		}
+		
+		function home() {
+			$('#signin').hide();
+			$('#footer2').hide();
+			$('#content').show();
+			$('#footer').show();
+		}
+	</script>
 </body>
-
-<script type="text/javascript" src="js/lib/jquery.js"></script>
-<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 </html>

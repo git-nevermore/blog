@@ -28,6 +28,8 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		registry.addViewController("/error").setViewName("error");  				// 自定义错误页面
         registry.addViewController("/registry").setViewName("registry");  			// 注册页面
         registry.addViewController("/main").setViewName("main");  					// 主界面
+        registry.addViewController("/index").setViewName("../index");  
+        registry.addViewController("/signin").setViewName("signin");  
 
     }
 	

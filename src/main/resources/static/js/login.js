@@ -1,7 +1,9 @@
 /**
- * 登录授权
+ * 登录处理
  */
-$("#login").click(function() {
+$("#login").click(loginFunc)
+		
+function loginFunc() {
 	var username = $("#username").val();
 	var password = $("#password").val();
 	if (username == "" || username == null) {
@@ -33,4 +35,4 @@ $("#login").click(function() {
         	alert(result.message);
 		}
 	});
-})
+}
