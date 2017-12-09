@@ -25,7 +25,7 @@ function loginFunc() {
 		success : function(result) {
 			console.log(result);
 			if (result.message =='登录成功') {
-				window.location.href = "main";		//主界面
+				window.location.href = "article";		//主界面
 			} else {
 				alert("登录失败");
 			}

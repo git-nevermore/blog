@@ -47,6 +47,20 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.26</version>
 		</dependency>
+		
+		<!-- 加入 Thymeleaf 视图依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<!-- Thymeleaf 使用不严格检查的 HTML5 -->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

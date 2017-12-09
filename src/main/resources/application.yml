@@ -14,9 +14,10 @@ spring:
       
   thymeleaf:
     mode: LEGACYHTML5
-    suffix: .html  
     content-type: text/html 
-
+    cache: false
+    prefix: classpath:/static/views/
+    suffix: .html  
   http:
     encoding:
       charset: UTF-8

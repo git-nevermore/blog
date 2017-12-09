@@ -29,7 +29,7 @@ $("#registry").click(function() {
 		success : function(result) {
 			console.log(result);
 			alert(result.message);
-			window.location.href = "/blog";
+			window.location.href = "../blog";
 		}
 	});
 })

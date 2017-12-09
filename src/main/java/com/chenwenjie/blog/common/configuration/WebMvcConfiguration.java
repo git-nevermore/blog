@@ -30,7 +30,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
         registry.addViewController("/main").setViewName("main");  					// 主界面
         registry.addViewController("/index").setViewName("../index");  
         registry.addViewController("/signin").setViewName("signin");  
-
+        registry.addViewController("/article").setViewName("article");  
     }
 	
 	/**

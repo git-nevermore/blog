@@ -1,7 +1,6 @@
 /**
- * 登录处理
+ * 获取文章
  */
-$("#login").click(loginFunc)
 		
 function loginFunc() {
 	var username = $("#username").val();
@@ -16,16 +15,12 @@ function loginFunc() {
 
 	$.ajax({
 		type : "post",
-		url : "user/login",
-		data : {
-			username : username,
-			password : password
-		},
+		url : "article/one",
 		dataType : "json",
 		success : function(result) {
 			console.log(result);
 			if (result.message =='登录成功') {
-				window.location.href = "article";		//主界面
+				window.location.href = "main";		//主界面
 			} else {
 				alert("登录失败");
 			}
